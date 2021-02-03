@@ -1,0 +1,21 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+   name: deployment
+spec:
+   replicas: 2
+   selector:
+     matchLabels:
+        name: deployment
+   template:
+     metadata:
+        name: testpod6
+        labels:
+          name: deployment
+     spec:
+        containers:
+        - name: c00
+          image: centos
+          command: ["/bin/bash","-c", "while true; do echo hello-students; sleep 5; done"]
+
+
