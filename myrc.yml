@@ -1,0 +1,22 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+   name: myrc
+spec:
+   replicas: 2
+   selector:
+     myname: rajani
+   template:
+     metadata:
+        name: testpod4
+        labels:
+          myname: rajani
+     spec:
+        containers:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash","-c", "while true; do echo hello-srini; sleep 5; done"]
+
+
+
+
