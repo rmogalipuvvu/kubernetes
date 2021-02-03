@@ -1,0 +1,11 @@
+kind: Pod
+apiVersion: v1
+metadata:
+   name: testpod6
+spec:
+   containers:
+   - name: c00
+     image: nginx
+     ports:
+     - containerPort: 80
+
