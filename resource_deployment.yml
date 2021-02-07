@@ -1,0 +1,23 @@
+ apiVersion: apps/v1
+metadata:
+   name: deployment
+spec:
+   replicas: 3
+   selector:
+     matchLabels:
+        objtype: deployment
+   template:
+     metadata:
+        name: testpod8
+        labels:
+           objtype: deployment
+     spec:
+        containers:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash","-c", "while true; do echo hello-students; sleep 5; done"]
+          resources:
+             requests:
+                cpu: "200m"
+
+ 
