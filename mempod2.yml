@@ -1,0 +1,13 @@
+ kind: Pod
+apiVersion: v1
+metadata:
+   name: constrains-mem-demo
+spec:
+   containers:
+   - name: default-cpu-demo
+     image: nginx
+     resources:
+       limits:
+          memory: "1.5Gi"
+       requests:
+          memory: "800Mi" 
