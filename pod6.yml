@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+   name: labelpod
+   labels:
+     env: development
+     class: pods
+spec:
+   containers:
+   - name: c01
+     image: ubuntu
+     command: ["/bin/bash","-c","while true; do echo hello-srini; sleep 4; done"]
+   nodeSelector:
+      hardware: t2-medium
