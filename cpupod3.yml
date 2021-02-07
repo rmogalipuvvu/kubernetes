@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+   name: default-cpu-demo
+spec:
+   containers:
+   - name: default-cpu-demo
+     image: nginx
+     resources:
+       requests:
+         cpu: "0.75"
+
