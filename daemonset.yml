@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: DaemonSet      # Type of Object
+metadata:
+  name: demodaemonset
+  namespace: default
+  labels:
+    env: demo
+spec:
+  selector:
+    matchLabels:
+      env: demo
+  template:
+    metadata:
+      labels:
+        env: demo
+    spec:
+      containers:
+      - name: demoset
+        image: ubuntu
+        command: ["/bin/bash", "-c", "while true; do echo Hello-Rajani; sleep 8 ; done"]
+      nodeSelector:                    # Run pods only on matching nodes with label
+        server: group1
