@@ -1,0 +1,16 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+ name: rajani
+spec:
+ schedule: "* * * * *"
+ jobTemplate:
+   spec:
+     template:
+       spec:
+         containers:
+         - image: ubuntu
+           name: rajani
+           command: ["/bin/bash", "-c", "echo Hi-rajani; sleep 5"]
+         restartPolicy: Never
+
